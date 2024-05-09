@@ -54,7 +54,7 @@ async function main() {
     })
 
     const provider = new RpcProvider({
-      nodeUrl: constants.NetworkName.SN_MAIN,
+      nodeUrl: process.env.STARKNET_MAINNET_RPC_URL ?? constants.StarknetChainId.SN_MAIN,
       chainId: constants.StarknetChainId.SN_MAIN
     });
     const hashAndBlockNumber = await provider.getBlockLatestAccepted()
